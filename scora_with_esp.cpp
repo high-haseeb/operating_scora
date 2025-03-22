@@ -223,7 +223,7 @@ String htmlPage = R"rawliteral(
             <div>
                 <label>Joint 3:</label>
                 <button onclick="sendCommand('/M3_ON')">Start</button>               
-                <label ><input type="checkbox" >Clockwise</label>
+                <label ><input type="checkbox" >Downward</label>
 
 
             </div>
