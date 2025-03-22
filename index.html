@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body{
+            margin: 0%;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .a{
+            display: flex;
+            position: fixed;
+            top: 0%;
+            background-color: black;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            font-weight: bolder;
+            color: white;
+            font-size: 20px;
+            flex-wrap: wrap;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+        }
+        .a label{
+            cursor: pointer;
+            margin: 3px;
+        }
+        .b{
+            display: flex;
+            width: 100%;
+            background-color: blue;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+
+            
+        }
+        #img1{
+            width: 300px;   
+            margin-top: 40px;     
+        }
+        
+        #h1{
+            font-size: 40px;
+            margin-top:40px;
+        }
+        
+        .c{
+            display: flex;
+            width: 100%;
+            background-color: #3373C4;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+            color: white;
+            
+        }
+        #c1, #e1,#f1{
+            font-size: 30px;
+            color: greenyellow;
+            font-weight: bolder;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+        #c2,#e2,#e3,#f2{
+            font-size: 20px;
+            color: white;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+
+
+        }
+        .e{
+            display: flex;
+            width: 100%;
+            background-color: blue;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+            color: white;
+        }
+        .e div,.f div{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            
+        }
+        .e div label,.f div label{
+            font-size: 20px;
+            color: greenyellow;
+            font-weight: bolder;
+            margin: 10px;
+        }
+        .e div button,.f button{
+            font-size: 20px;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            
+        }
+        .e div input[type="checkbox"]{
+            accent-color: black;
+            cursor: pointer;
+        }
+        .f div input[type="number"]{
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        .f{
+            display: flex;
+            width: 100%;
+            background-color: #3373C4;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+        }
+        
+        @media (max-width:850px)
+        {
+            .a label{font-size: 15px;}
+            .b #h1{font-size: 24px;}
+            .b #p{font-size: 18px;}
+            .c #c1{font-size: 18px;}
+            .e #e1{font-size: 18px;}
+            .f #f1{font-size: 18px;}
+            .c #c2{font-size: 15px;}
+            .f #f2{font-size: 15px;}
+            .e #e2{font-size: 15px;}
+            .e #e3{font-size: 15px;}
+            .e div label{font-size: 15px;}
+            .f div label{font-size: 15px;}
+            .f div input[type="number"]{font-size: 15px;}
+            .e div button,.f button{font-size: 15px;}
+            #img1{width: 200px;margin-top: 10px;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <label >About</label>
+        <label >Kinematics</label>
+        <label >Operation</label>
+        <label >Specifications</label>
+    </div>
+    <div id="About">
+        <div class="b">
+            <h1 id="h1" style="color: greenyellow;font-weight: bolder;">
+                SCORA ER-14 ROBOT
+            <p id="p" style="color: white;">4-DOF Robotic Arm for Kinematics and Control</p>
+            </h1>
+            <img id="img1" src="scora.png"  alt="">
+        </div>
+
+        <div class="c">
+            <label id="c1">Overview</label>
+            <label id="c2">
+                The SCORA ER-14 is a 4-degree-of-freedom (DOF) robotic arm designed for educational
+                and industrial applications, particularly in kinematics, automation, and control system studies.
+                It features a robust mechanical structure with precise joint articulation, enabling users to 
+                perform forward and inverse kinematics calculations for motion planning. The robot is commonly
+                used in research labs and training institutes to teach robotics concepts, programming, and 
+                real-world automation techniques. Its compact design and compatibility with various control systems
+                make it a versatile tool for learning and experimentation in robotic manipulation.
+            </label>
+        </div>
+    </div>
+    <div id="Kinematics">
+
+    </div>
+    <div id="Operation">
+        <div class="e">
+            <label id="e1">Operation</label>
+            <label id="e3">Precision control at your fingertips – Operate the SCORA robot with ease! </label>
+            <label id="e2"> Trigger a 10-degree rotation for individual robot joints.</label>
+            <div>
+                <label>Joint 1:</label>
+                <button onclick="sendCommand('/M1_ON')">Start</button>               
+                <label ><input type="checkbox" >Clockwise</label>
+            </div>
+            <div>
+                <label>Joint 2:</label>
+                <button onclick="sendCommand('/M2_ON')">Start</button>               
+                <label ><input type="checkbox" >Clockwise</label>
+
+            </div>
+            <div>
+                <label>Joint 3:</label>
+                <button onclick="sendCommand('/M3_ON')">Start</button>               
+                <label ><input type="checkbox" >Clockwise</label>
+
+
+            </div>
+            <div>
+                <label>Joint 4:</label>
+                <button onclick="sendCommand('/M4_ON')">Start</button>               
+                <label ><input type="checkbox" >Clockwise</label>
+
+            </div>
+                
+        </div>
+        <div class="f">
+            <label  id="f1"> Forward Kinematics</label>
+            <label id="f2">Provide joint angles as input and change the position of the end effector.</label>
+            <div>
+                <label>Joint 1:</label>
+                <input  type="number" placeholder="Angle(deg)">                
+            </div>
+            <div>
+                <label>Joint 2:</label>
+                <input  type="number" placeholder="Angle(deg)">                
+            </div>
+            <div>
+                <label>Joint 3:</label>
+                <input  type="number" placeholder="Translation(cm)">                
+            </div>
+            <div>
+                <label>Joint 4:</label>
+                <input  type="number" placeholder="Angle(deg)">                
+              
+            </div>
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+    <div id="Specification">
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>
+    {
+        let ids=["#About","#Kinematics","#Operation","#Specification"]
+        let icons=document.querySelectorAll(".a label")
+        let checks=document.querySelectorAll(".e div input")
+        
+        for(let i=0;i<checks.length;i++)
+        {
+            checks[i].addEventListener("change",()=>
+            {
+                if(checks[i].checked)
+                {
+                    document.body.style.backgroundColor="white"           
+                }
+                else
+                {
+                    document.body.style.backgroundColor="white"           
+                }
+            })
+        }
+        
+        icons[0].style.color="greenyellow"
+        
+        for(let i=0;i<icons.length;i++)
+        {
+            icons[i].addEventListener("click",()=>
+            {
+                for(let j=0;j<icons.length;j++)
+                {
+                    icons[j].style.color="white"
+                }
+                icons[i].style.color="greenyellow"
+                window.location.hash=ids[i]
+            })
+        }
+        
+        let joint_angles=document.querySelectorAll(".f div input")
+        let submit=document.getElementById("submit")
+        
+        submit.addEventListener("click",()=>
+        {
+            let angles=[]
+            for(let i=0;i<joint_angles.length;i++)
+            {
+                angles.push(joint_angles[i].value)
+            }
+        
+        fetch(`/forward_kinematics?j1=${angles[0]}&j2=${angles[1]}&j3=${angles[2]}&j4=${angles[3]}`)
+        .then(response=>response.json())
+        .catch(error=>console.error("Error:",error))
+        })
+    }
+    )
+    
+    function sendCommand(cmd) {
+            fetch(cmd)
+            .then(response => console.log("Command sent: " + cmd))
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>
