@@ -212,12 +212,12 @@ String htmlPage = R"rawliteral(
             <div>
                 <label>Joint 1:</label>
                 <button onclick="sendCommand('/M1_ON')">Start</button>               
-                <label ><input type="checkbox" >Clockwise</label>
+                <label ><input type="checkbox" >Clock-wise</label>
             </div>
             <div>
                 <label>Joint 2:</label>
                 <button onclick="sendCommand('/M2_ON')">Start</button>               
-                <label ><input type="checkbox" >Clockwise</label>
+                <label ><input type="checkbox" >Clock-wise</label>
 
             </div>
             <div>
@@ -230,7 +230,7 @@ String htmlPage = R"rawliteral(
             <div>
                 <label>Joint 4:</label>
                 <button onclick="sendCommand('/M4_ON')">Start</button>               
-                <label ><input type="checkbox" >Clockwise</label>
+                <label ><input type="checkbox" >Clock-wise</label>
 
             </div>
                 
