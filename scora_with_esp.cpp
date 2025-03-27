@@ -211,25 +211,25 @@ String htmlPage = R"rawliteral(
             <label id="e2"> Trigger a 10-degree rotation for individual robot joints.</label>
             <div>
                 <label>Joint 1:</label>
-                <button onclick="sendCommand('/M1_ON')">Start</button>               
+                <button >Start</button>               
                 <label ><input type="checkbox" >Clock-wise</label>
             </div>
             <div>
                 <label>Joint 2:</label>
-                <button onclick="sendCommand('/M2_ON')">Start</button>               
+                <button >Start</button>               
                 <label ><input type="checkbox" >Clock-wise</label>
 
             </div>
             <div>
                 <label>Joint 3:</label>
-                <button onclick="sendCommand('/M3_ON')">Start</button>               
+                <button >Start</button>               
                 <label ><input type="checkbox" >Downward</label>
 
 
             </div>
             <div>
                 <label>Joint 4:</label>
-                <button onclick="sendCommand('/M4_ON')">Start</button>               
+                <button >Start</button>               
                 <label ><input type="checkbox" >Clock-wise</label>
 
             </div>
@@ -268,18 +268,18 @@ String htmlPage = R"rawliteral(
         let ids=["#About","#Kinematics","#Operation","#Specification"]
         let icons=document.querySelectorAll(".a label")
         let checks=document.querySelectorAll(".e div input")
-        
+        let joints=document.querySelectorAll(".e div button")
+        let directions=["A","A","U","A"]
+        let requests=["M1_ON","M2_ON","M3_ON","M4_ON"]
         for(let i=0;i<checks.length;i++)
         {
             checks[i].addEventListener("change",()=>
             {
                 if(checks[i].checked)
                 {
-                    document.body.style.backgroundColor="white"           
-                }
-                else
-                {
-                    document.body.style.backgroundColor="white"           
+                    if(i!=2){directions[i]="C"}
+                    else{directions[i]="D"}
+
                 }
             })
         }
@@ -314,14 +314,19 @@ String htmlPage = R"rawliteral(
         .then(response=>response.json())
         .catch(error=>console.error("Error:",error))
         })
+        for(let i=0;i<joints.length;i++)
+        {
+            joints[i].addEventListener("click",()=>
+            {
+                fetch(`/${requests[i]}${directions[i]}`)
+                .then(response=>console.log("Command sent: "+requests[i]+directions[i]))
+                .catch(error=>console.error("Error:",error))
+            })
+        }
     }
     )
     
-    function sendCommand(cmd) {
-            fetch(cmd)
-            .then(response => console.log("Command sent: " + cmd))
-            .catch(error => console.error("Error:", error));
-        }
+    
     </script>
 </body>
 </html>
@@ -441,6 +446,7 @@ void loop() {
 
     // Check if browser requested LED ON or OFF
     if (request.indexOf("/M1_ON") != -1) {
+
         digitalWrite(M1_REN,HIGH);
         digitalWrite(M1_LEN,HIGH);
         float angle1 = (M1_encoderCount *360) / (160*1024);  
@@ -449,12 +455,15 @@ void loop() {
         {
             angle1 = (M1_encoderCount *360) / (160*1024);
             Serial.println(angle1);
-            analogWrite(M1_LPWM,150);//AntiClockWsie
+            if(request[6]=='A'){analogWrite(M1_LPWM,150);}//AntiClockwise
+            else{analogWrite(M1_RPWM,150);}//ClockWise
             delay(500);
         }
         digitalWrite(M1_REN,LOW);
         digitalWrite(M1_LEN,LOW);
         analogWrite(M1_LPWM,0);
+        analogWrite(M1_RPWM,0);
+
         client.println("HTTP/1.1 204 No Content"); // No response body
     } 
     if (request.indexOf("/M2_ON") != -1) {
@@ -462,10 +471,12 @@ void loop() {
         digitalWrite(M2_LEN,HIGH);
         for(float i=0;i<255;i+=.5)
         {
-            analogWrite(M2_RPWM,i);//ClockWise
+            if(request[6]=='C'){analogWrite(M2_RPWM,i);}//Clockwise
+            else{analogWrite(M2_LPWM,i);}//AntiClockWise
             delay(30);
             Serial.println(i);
         }
+        
         
 
         client.println("HTTP/1.1 204 No Content"); // No response body
@@ -475,17 +486,18 @@ void loop() {
         digitalWrite(M3_LEN,HIGH);
         float trans1= (M3_encoderCount *360) / (160*1024*4.91);
 
-        while(trans1<7.0)
+        while(trans1<5.0)
         {
             trans1 = (M3_encoderCount *360) / (160*1024*4.91);
             Serial.println(trans1);
-            analogWrite(M3_RPWM,150);
+            if(request[6]=='D'){analogWrite(M3_RPWM,150);}//Down
+            else{analogWrite(M3_LPWM,150);}//Up
             delay(500);
         }
         digitalWrite(M3_REN,LOW);
         digitalWrite(M3_LEN,LOW);
-        analogWrite(M3_RPWM,0);//Down
-
+        analogWrite(M3_RPWM,0);
+        analogWrite(M3_LPWM,0);
         client.println("HTTP/1.1 204 No Content"); // No response body
     } 
     if (request.indexOf("/M4_ON") != -1) {
