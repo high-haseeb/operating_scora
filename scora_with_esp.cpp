@@ -21,6 +21,7 @@ String htmlPage = R"rawliteral(
         body{
             margin: 0%;
         }
+        
         html{
             scroll-behavior: smooth;
         }
@@ -46,7 +47,7 @@ String htmlPage = R"rawliteral(
         .b{
             display: flex;
             width: 100%;
-            background-color: blue;
+            background-color: #191960;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
@@ -58,7 +59,8 @@ String htmlPage = R"rawliteral(
         }
         #img1{
             width: 300px;   
-            margin-top: 40px;     
+            margin-top: 40px;   
+              
         }
         
         #h1{
@@ -69,7 +71,7 @@ String htmlPage = R"rawliteral(
         .c{
             display: flex;
             width: 100%;
-            background-color: #3373C4;
+            background-color: darkblue;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
@@ -79,15 +81,15 @@ String htmlPage = R"rawliteral(
             color: white;
             
         }
-        #c1, #e1,#f1{
+        #c1, #e1,#f1,#g1,#h1{
             font-size: 30px;
-            color: greenyellow;
+            color: lime;
             font-weight: bolder;
             margin-top: 10px;
             margin-bottom: 10px;
 
         }
-        #c2,#e2,#e3,#f2{
+        #c2,#e2,#e3,#f2,#f3,#h2,#g2,.g div div label{
             font-size: 20px;
             color: white;
             margin-right: 15px;
@@ -99,7 +101,7 @@ String htmlPage = R"rawliteral(
         .e{
             display: flex;
             width: 100%;
-            background-color: blue;
+            background-color: darkblue;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
@@ -108,7 +110,7 @@ String htmlPage = R"rawliteral(
             border-width: 0px 0px 1px 0px ;
             color: white;
         }
-        .e div,.f div{
+        .e div,.f div,.h div{
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -116,58 +118,132 @@ String htmlPage = R"rawliteral(
             flex-direction: row;
             
         }
-        .e div label,.f div label{
+        .e div label,.f div label,.h div label{
             font-size: 20px;
-            color: greenyellow;
+            color: lime;
             font-weight: bolder;
             margin: 10px;
         }
-        .e div button,.f button{
+        .e div button,.f button,.h button{
             font-size: 20px;
-            color: black;
-            background-color: white;
             border-radius: 5px;
             margin: 10px;
             cursor: pointer;
-            
+            background-color: white;
+            font-weight: bold;
+        }
+        .e div button,.h button{
+            color: darkblue;
+            border-width: 1px;
+            border: darkblue solid;
+
+        }
+        .f button{
+            color: #191960;
+            border: #191960 solid;
+
+        }
+        .e div button:hover,.f button:hover,.h button:hover{
+            color: white;
+            transition: all 0.3s ease-in-out; 
+            border: white solid;  
+         
+        }
+        .e div button:hover,.h button:hover{
+            background-color: darkblue;
+        }
+        .f button:hover{
+            background-color: #191960;
         }
         .e div input[type="checkbox"]{
-            accent-color: black;
             cursor: pointer;
+            width: 20px;
+            height: 20px;
         }
-        .f div input[type="number"]{
+        .e div input[type="checkbox"]:checked{
+            accent-color: darkblue;
+        }
+
+        .f div input[type="number"],.h div input[type="number"]{
             cursor: pointer;
             font-size: 20px;
             border-radius: 5px;
+            border: none;
         }
-        .f{
+        .f,.h{
             display: flex;
             width: 100%;
-            background-color: #3373C4;
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
             border: white solid;
             border-width: 0px 0px 1px 0px ;
         }
+        .h{
+            background-color: darkblue;
+        }
+        .f{
+            background-color:#191960;
+        }
+        .g{
+            display: flex;
+            background-color: #191960;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border: white solid;
+            border-width: 0px 0px 1px 0px ;
+        }
+        .g img{
+            width:350px;
+            
+        }
+        .g div div label{
+            width: 300px;
+            border-radius: 8px;
+            background-color: white;
+            color: #191960;
+            padding: 3px;
+
+        }
         
+        .g div div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .g div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
         @media (max-width:850px)
         {
             .a label{font-size: 15px;}
-            .b #h1{font-size: 24px;}
+            .b #h1{font-size: 24px;margin-top: 40px;}
             .b #p{font-size: 18px;}
             .c #c1{font-size: 18px;}
             .e #e1{font-size: 18px;}
             .f #f1{font-size: 18px;}
+            .g #g1{font-size: 18px;}
+            .h #h1{font-size: 18px;}
             .c #c2{font-size: 15px;}
             .f #f2{font-size: 15px;}
+            .f #f3{font-size: 15px;}
             .e #e2{font-size: 15px;}
             .e #e3{font-size: 15px;}
+            .g #g2{font-size: 15px;}
+            .h #h2{font-size: 15px;}
             .e div label{font-size: 15px;}
-            .f div label{font-size: 15px;}
-            .f div input[type="number"]{font-size: 15px;}
-            .e div button,.f button{font-size: 15px;}
+            .f div label,.h div label{font-size: 15px;}
+            .g div div label{font-size: 15px;}
+            .f div input[type="number"],.h div input[type="number"]{font-size: 15px;}
+            .e div button,.f button,.h button{font-size: 15px;}
             #img1{width: 200px;margin-top: 10px;}
+
+            .g div div img{width: 250px;}
         }
     </style>
 </head>
@@ -181,7 +257,7 @@ String htmlPage = R"rawliteral(
     </div>
     <div id="About">
         <div class="b">
-            <h1 id="h1" style="color: greenyellow;font-weight: bolder;">
+            <h1 id="h1" style="color: lime;font-weight: bolder;">
                 SCORA ER-14 ROBOT
             <p id="p" style="color: white;">4-DOF Robotic Arm for Kinematics and Control</p>
             </h1>
@@ -191,13 +267,10 @@ String htmlPage = R"rawliteral(
         <div class="c">
             <label id="c1">Overview</label>
             <label id="c2">
-                The SCORA ER-14 is a 4-degree-of-freedom (DOF) robotic arm designed for educational
-                and industrial applications, particularly in kinematics, automation, and control system studies.
-                It features a robust mechanical structure with precise joint articulation, enabling users to 
-                perform forward and inverse kinematics calculations for motion planning. The robot is commonly
-                used in research labs and training institutes to teach robotics concepts, programming, and 
-                real-world automation techniques. Its compact design and compatibility with various control systems
-                make it a versatile tool for learning and experimentation in robotic manipulation.
+                This is web-based user interface for operating SCORA ER-14 which is a 4-degree-of-freedom (DOF) robotic arm designed for educational
+                and industrial applications.It features a robust mechanical structure with precise 
+                joint articulation, enabling users to perform forward and inverse kinematics calculations
+                for motion planning. The robot is commonly used in real-world automation techniques.
             </label>
         </div>
     </div>
@@ -205,10 +278,30 @@ String htmlPage = R"rawliteral(
 
     </div>
     <div id="Operation">
+        <div class="g">
+            <label id="g1">Wireless Setup</label>
+            <label id="g2">The robot is programmed through ESP micro-controller and is driven wirelessly.Perform following steps to get started.</label>
+            <div>
+                <div >
+                    <img src="esp.png" alt="">
+                    <label >Power ON the ESP by connecting to laptop.</label>
+                </div>
+                <div>
+                    <img src="wifi.png" alt="">
+                    <label >Connect your device to ESP's Wifi Network.</label>
+
+                </div>
+                <div>
+                    <img src="browser.png" alt="">
+                    <label >To access this web page,Navigate to <code>http://192.168.4.1/</code>.  </label>
+
+                </div>
+            </div>
+        </div>
         <div class="e">
-            <label id="e1">Operation</label>
-            <label id="e3">Precision control at your fingertips – Operate the SCORA robot with ease! </label>
-            <label id="e2"> Trigger a 10-degree rotation for individual robot joints.</label>
+            <label id="e1">Get Started</label>
+            <label id="e3">Precision control at your fingertips – Operate the SCORA robot with ease!</label>
+            <label id="e2"> Trigger a 10-degree rotation or 5-cm translation for individual robot joints.</label>
             <div>
                 <label>Joint 1:</label>
                 <button >Start</button>               
@@ -236,8 +329,9 @@ String htmlPage = R"rawliteral(
                 
         </div>
         <div class="f">
-            <label  id="f1"> Forward Kinematics</label>
-            <label id="f2">Provide joint angles as input and change the position of the end effector.</label>
+            <label  id="f1">Forward Kinematics</label>
+            <label id="f2">Provide joint poses as input and change the position of the end effector.</label>
+            <label id="f3">Positive values correspond to Anti-Clockwise rotation and Upward translation.</label>
             <div>
                 <label>Joint 1:</label>
                 <input  type="number" placeholder="Angle(deg)">                
@@ -254,6 +348,26 @@ String htmlPage = R"rawliteral(
                 <label>Joint 4:</label>
                 <input  type="number" placeholder="Angle(deg)">                
               
+            </div>
+            <button id="submit">Submit</button>
+        </div>
+
+        <div class="h">
+            <label id="h1">Inverse Kinematics</label>
+            <label id="h2">Provide coordinate positions of the
+                 end effector with respect to base frame of the robot
+                and see joints moving accordingly.</label>
+            <div>
+                <label>Position X:</label>
+                <input  type="number" placeholder="Coordinate(cm)">                
+            </div>
+            <div>
+                <label>Position Y:</label>
+                <input  type="number" placeholder="Coordinate(cm)">                
+            </div>
+            <div>
+                <label>Position Z:</label>
+                <input  type="number" placeholder="Coordinate(cm)">                
             </div>
             <button id="submit">Submit</button>
         </div>
@@ -284,7 +398,7 @@ String htmlPage = R"rawliteral(
             })
         }
         
-        icons[0].style.color="greenyellow"
+        icons[0].style.color="lime"
         
         for(let i=0;i<icons.length;i++)
         {
@@ -294,7 +408,7 @@ String htmlPage = R"rawliteral(
                 {
                     icons[j].style.color="white"
                 }
-                icons[i].style.color="greenyellow"
+                icons[i].style.color="lime"
                 window.location.hash=ids[i]
             })
         }
